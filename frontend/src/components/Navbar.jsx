@@ -1,8 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from './ui/button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu'
-import { ChevronDown, FileText, GraduationCap, PenBox, StarsIcon } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import {
+  ChevronDown,
+  FileText,
+  GraduationCap,
+  PenBox,
+  StarsIcon,
+} from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -19,26 +32,26 @@ const Navbar = () => {
     //   </div>
     // </nav>
 
-    <header className='fixed top-0 w-full border-b border-gray-800 bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60 '>
-      <nav className='container mx-auto px-10 h-16 flex items-center justify-between bg-black'>
-        <Link to={"/"} className='text-2xl text-gray-200 font-semibold'>
-        Mentor Connect
+    <header className="fixed top-0 w-full border-b border-gray-800  bg-black backdrop-blur-md z-50 supports-[backdrop-filter]:bg-black/60">
+      <nav className="container mx-auto px-10 h-16 flex items-center justify-between bg-black">
+        <Link to={"/"} className="text-2xl text-gray-200 font-semibold">
+          Mentor Connect
         </Link>
 
-        <div className='flex items-center space-x-2 md:space-x-4'>
+        <div className="flex items-center space-x-2 md:space-x-4">
           <Link href={"/dashboard"}>
             <Button>
               {/* <LayoutDashboard className='h-4 w-4' /> */}
-              <span className='hidden md:block'> Contact Us</span>
+              <span className="hidden md:block"> Contact Us</span>
             </Button>
           </Link>
 
           <DropdownMenu>
             <DropdownMenuTrigger>
               <Button>
-                <StarsIcon className='h-4 w-4' />
-                <span className='hidden md:block'>Growth Tools</span>
-                <ChevronDown className='h-4 w-4' />
+                <StarsIcon className="h-4 w-4" />
+                <span className="hidden md:block">Growth Tools</span>
+                <ChevronDown className="h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -66,11 +79,14 @@ const Navbar = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-
-         <Link to={"/sign-in"}>
-         <Button variant="default" className={"bg-white text-black hover:text-white"} >Sign In</Button>
-         </Link>
-
+          <Link to={"/sign-in"}>
+            <Button
+              variant="default"
+              className={"bg-white text-black hover:text-white"}
+            >
+              Sign In
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>
