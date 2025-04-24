@@ -20,7 +20,7 @@ const Navbar = () => {
     // </nav>
 
     <header className='fixed top-0 w-full border-b border-gray-800 bg-background/80 backdrop-blur-md z-50 supports-[backdrop-filter]:bg-background/60 '>
-      <nav className='container mx-auto px-10 h-16 flex items-center justify-between'>
+      <nav className='container mx-auto px-10 h-16 flex items-center justify-between bg-black'>
         <Link to={"/"} className='text-2xl text-gray-200 font-semibold'>
         Mentor Connect
         </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
 
 
          <Link to={"/sign-in"}>
-         <Button variant="outline">Sign In</Button>
+         <Button variant="default" className={"bg-white text-black hover:text-white"} >Sign In</Button>
          </Link>
 
         </div>

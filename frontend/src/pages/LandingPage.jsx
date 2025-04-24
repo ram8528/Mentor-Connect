@@ -8,45 +8,45 @@ import { FaChalkboardTeacher, FaCommentDollar, FaRegCommentDots, FaRobot, FaRock
 
 export const features = [
     {
-        icon: <User className="w-10 h-10 mb-4 text-primary" />,
+        icon: <User className="w-10 h-10 mb-4 text-white" />,
         title: "Role-Based Access",
         description:
             "Separate dashboards and tools for students and mentors to maximize their experience.",
     },
     {
-        icon: <FaRobot className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaRobot className="w-10 h-10 mb-4 text-white" />,
         title: "AI Mentor Matching",
         description:
             " Smart matching using AI to connect students with the best mentor based on goals and interests."
     },
     {
-        icon: <FaRegCommentDots className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaRegCommentDots className="w-10 h-10 mb-4 text-white" />,
         title: "Post & Share",
         description:
             "Both students and mentors can post thoughts, share questions, or create discussions."
     },
     {
-        icon: <FaRocket className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaRocket className="w-10 h-10 mb-4 text-white" />,
         title: "Growth Tracker",
         description: "Set goals, monitor progress, and stay accountable with your personalized dashboard.",
     },
     {
-        icon: <FaUserGraduate className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaUserGraduate className="w-10 h-10 mb-4 text-white" />,
         title: "Student Profiles",
         description: "Let mentors view your strengths, learning path, and areas you’re passionate about.",
     },
     {
-        icon: <FaRocket className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaRocket className="w-10 h-10 mb-4 text-white" />,
         title: "Growth Tracker",
         description: "Set goals, monitor progress, and stay accountable with your personalized dashboard.",
     },
     {
-        icon: <FaRocket className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaRocket className="w-10 h-10 mb-4 text-white" />,
         title: "Growth Tracker",
         description: "Set goals, monitor progress, and stay accountable with your personalized dashboard.",
     },
     {
-        icon: <FaChalkboardTeacher className="w-10 h-10 mb-4 text-primary" />,
+        icon: <FaChalkboardTeacher className="w-10 h-10 mb-4 text-white" />,
         title: "Mentor Portfolios",
         description: "Mentors can showcase their background, subjects, and mentoring style to attract the right mentees.",
     },
@@ -57,22 +57,22 @@ const howItWorks = [
     {
         title: "1. Sign Up",
         desc: "Choose your role and register securely.",
-        icon: <UserPlus className="w-8 h-8 text-primary" />,
+        icon: <UserPlus className="w-8 h-8 text-white" />,
     },
     {
         title: "2. Build Profile",
         desc: "Add goals, interests, and skills.",
-        icon: <FaUser className="w-8 h-8 text-primary" />,
+        icon: <FaUser className="w-8 h-8 text-white" />,
     },
     {
         title: "3. Match & Connect",
         desc: "Our AI suggests top mentor/mentee matches.",
-        icon: <FileEdit className="w-8 h-8 text-primary" />,
+        icon: <FileEdit className="w-8 h-8 text-white" />,
     },
     {
         title: "4. Engage & Grow",
         desc: "Collaborate through posts, calls, and shared resources.",
-        icon: <FaCommentDollar className="w-8 h-8 text-primary" />,
+        icon: <FaCommentDollar className="w-8 h-8 text-white" />,
     },
 ];
 
@@ -143,12 +143,12 @@ const LandingPage = () => {
                     </div>
                     <div className="flex justify-center space-x-4">
                         <Link to={"/sign-in"}>
-                            <Button size="lg" className="px-8">
+                            <Button size="lg" className="px-8 cursor-pointer">
                                 Get Started
                             </Button>
                         </Link>
                         <Link href="https://www.youtube.com/roadsidecoder">
-                            <Button size="lg" variant="outline" className="px-8">
+                            <Button size="lg" variant="default"  className="px-8 bg-white text-black">
                                 Watch Demo
                             </Button>
                         </Link>
@@ -171,7 +171,7 @@ const LandingPage = () => {
 
 
             {/* Features Section */}
-            <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+            <section className="w-full py-12 md:py-24 lg:py-32 ">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold tracking-tighter text-center mb-12">
                         Platform Highlights
@@ -180,10 +180,10 @@ const LandingPage = () => {
                         {features.map((feature, index) => (
                             <Card
                                 key={index}
-                                className="border-2 hover:border-primary transition-colors duration-300"
+                                className="border-2 hover:border-primary bg-black text-white transition-colors duration-300"
                             >
                                 <CardContent className="pt-6 text-center flex flex-col items-center">
-                                    <div className="flex flex-col items-center justify-center">
+                                    <div className="flex flex-col items-center justify-center ">
                                         {feature.icon}
                                         <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
                                         <p className="text-muted-foreground">
@@ -199,7 +199,7 @@ const LandingPage = () => {
 
 
             {/* Stats Section */}
-            <section className="w-full py-12 md:py-24 bg-muted/50">
+            <section className="w-full py-12 md:py-24 ">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
                         <div className="flex flex-col items-center justify-center space-y-2">
@@ -251,14 +251,14 @@ const LandingPage = () => {
             </section>
 
 
-            <section className="w-full py-12 md:py-24 bg-muted/50">
+            <section className="w-full py-12 md:py-24">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl font-bold text-center mb-12">
                         What Our Users Say
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                         {testimonial.map((testimonial, index) => (
-                            <Card key={index} className="bg-background">
+                            <Card key={index} className="bg-black text-color">
                                 <CardContent className="pt-6">
                                     <div className="flex flex-col space-y-4">
                                         <div className="flex items-center space-x-4 mb-4">
@@ -316,7 +316,7 @@ const LandingPage = () => {
                             <Button
                                 size="lg"
                                 variant="secondary"
-                                className="h-11 mt-5 animate-bounce bg-blue-700"
+                                className="h-11 mt-5 animate-bounce "
                     
                             >
                                 Start Your Journey Today <ArrowRight className="ml-2 h-4 w-4" />

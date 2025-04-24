@@ -7,12 +7,14 @@ import LandingPage from './pages/LandingPage.jsx';
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
-      <Routes>
-        <Route path='/' element={<LandingPage/>}/>
-        <Route path='/sign-in' element={<SignIn/>}/>
+      <section className='min-h-screen bg-black text-white'>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/sign-in' element={<SignIn />} />
 
-      </Routes>
+        </Routes>
+      </section>
     </BrowserRouter>
   );
 }
