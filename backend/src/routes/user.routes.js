@@ -18,7 +18,7 @@ import { verifyJWT } from "../middlewares/auth.middleware.js"; // Importing midd
 const router = Router(); // Creating a new router instance
 
 // Route for user registration
-router
+router 
     .route("/register")
     .post(
         // Middleware to handle file uploads for avatar and cover image
