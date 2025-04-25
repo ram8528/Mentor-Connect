@@ -4,31 +4,17 @@ import { Label } from "../components/ui/label"
 import { Button } from "../components/ui/button"
 import { Link } from "react-router-dom"
 import axios from "axios"
+import { useAuthStore } from '../store/useAuthStore'
 
 const SignIn = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  const { login } = useAuthStore();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:5000/api/v1/users/login", {
-      email,
-      password
-    }, {
-      withCredentials: true, // Include credentials (cookies) in the request
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    console.log(response); // Handle the response as needed
-    // if (response.data.success) {
-    //   // Redirect to the home page or perform any other action on successful login
-    //   window.location.href = "/home";
-    // } else {
-    //   // Handle login failure (e.g., show an error message)
-    //   console.error("Login failed:", response.data.message);
-    // }
+    login({ email, password });
   }
 
   return (

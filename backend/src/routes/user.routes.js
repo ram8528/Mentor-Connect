@@ -1,5 +1,6 @@
 import { Router } from "express"; // Importing Router from express framework
 import {
+    checkAuth,
     // changeCurrentPassword,
     // getCurrentUser,
     // getUserChannelProfile,
@@ -18,7 +19,7 @@ import { verifyJWT } from "../middlewares/auth.middleware.js"; // Importing midd
 const router = Router(); // Creating a new router instance
 
 // Route for user registration
-router 
+router
     .route("/register")
     .post(
         // Middleware to handle file uploads for avatar and cover image
@@ -49,6 +50,10 @@ router
 router
     .route("/logout")
     .get(verifyJWT, logoutUser); // Middleware to verify JWT before logging out
+
+router
+    .route("/check-auth")
+    .get(verifyJWT, checkAuth); // Middleware to verify JWT before logging out
 
 // Protected Route for changing user password
 // router

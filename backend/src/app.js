@@ -1,30 +1,25 @@
-// Import necessary modules
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import { app } from "../lib/socket.js";
 
-// Create an Express application
-const app = express();
-
-// Enable CORS with specific origin and credentials support
+// Enable CORS as the very first middleware
 app.use(cors({
-    origin: process.env.CORS_ORIGIN, // Allow requests from this origin
-    methods: ['POST', 'GET', 'PUT', 'DELETE'],
-    credentials: true, // Allow credentials (cookies, authorization headers, etc.)
-    optionSuccessStatus: 200 // For successful preflight requests
+    origin: 'http://localhost:5173/',
+    credentials: true
 }));
 
-// Parse incoming JSON requests with a limit of 16kb
+app.options('*', cors());
+
+
+// ...rest of your middleware and routes...
 app.use(express.json({ limit: "16kb" }));
-
-// Parse URL-encoded data with a limit of 16kb
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-
-// Serve static files from the "public" directory
 app.use(express.static("public"));
-
-// Parse cookies from incoming requests
 app.use(cookieParser());
+
+// routes import and declaration...
+// ...existing code...
 
 //routes import
 import userRouter from "./routes/user.routes.js";
@@ -34,6 +29,3 @@ import healthCheckRouter from "./routes/healthCheck.routes.js";
 app.use("/api/v1/healthCheck", healthCheckRouter);
 app.use("/api/v1/users", userRouter);
 
-
-// Export the Express application
-export { app };

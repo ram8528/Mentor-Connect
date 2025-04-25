@@ -4,8 +4,9 @@ import 'dotenv/config';
 import connectDB from "./db/index.js";
 
 // Import the Express application
-import { app } from './app.js';
+import { server, app } from "../lib/socket.js";
 
+// import app from "./app.js";
 // Connect to the database
 connectDB()
   .then(() => {
@@ -16,7 +17,7 @@ connectDB()
     });
 
     // Start the server and listen on the specified port
-    app.listen(process.env.PORT || 8000, () => {
+    server.listen(process.env.PORT || 8000, () => {
       console.log(`App listening on port: ${process.env.PORT || 8000}`);
     });
   })
